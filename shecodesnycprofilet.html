@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York, New York</title>
+    <style>
+ 
+.profile-site {
+ box-shadow:rgba(37,39,89,0.08) 0px 8px 8px 0;
+ background-image:linear-gradient(to top, ivory 0%, black 100%);
+ border-radius:10px;
+ color: fuchsia;
+ width:50%;
+ padding:30px;
+ margin:40px auto;
+ font-family: Garamond, Helvetica, Arial, sans-serif
+}
+.profile-site h1 {
+ text-align:center;
+ font-weight:bold;
+ border:2px solid #fff;
+ padding:20px;
+ border-radius:4px;
+ font-size:45px
+ 
+}
+.profile-site h2 {
+ text-align:center;
+ font-size:30px
+}
+.profile-site p {
+ color: black;   
+ line-height:1.4;
+ font-size:21px
+}
+.profile-site img {
+ margin:0 auto;
+ display:block;
+ border-radius:4px;
+ max-height: 400px;
+ max-width:500px
+}
+.profile-site a {
+ color: fuchsia;
+ font-size:16px
+}
+.profile-site button {
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%, fuchsia);
+  text-align: center;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 30px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 10px;
+  text-decoration: none;
+  transition:opacity 200ms ease;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  text-transform:uppercase;
+  margin:auto
+
+}
+.profile-site button:hover {
+ opacity:0.7
+}
+
+    </style>
+</head>
+<body>
+    <div class="profile-site">
+    <h1>New York, New York
+    </h1>
+    <h2>The City that Never Sleeps
+    </h2>
+<hr> 
+<img src="https://media.architecturaldigest.com/photos/56009743cbec99cc0f9f5d1c/master/w_1920%2Cc_limit/dam-images-set-design-nyfw-2015-new-york-fashion-week-sets-01.jpg" alt="">
+    <hr>
+    <p>
+        <strong>New York City</strong>, also know as its official nickname <ital><span style="color:purple">The Big Apple</span></ital>, has a rich history. Located in the state of New York, it was the capital of the United States from 1785-1790 and it is the largest city in the U.S. It is home to close to 9 million people and some of the most iconic landmarks such as the Statue of Liberty and Central Park. Culturally, the city boasts internationally known attractions such as the Metropolitan Museum of Art, the American Museum of Natural History, and New York City Fashion Week. New Yorkers are just as diverse as the city's offerings. New Yorkers collectively speak over 800 languages. It is a <em>true</em> melting pot.</p>
+<a href="https://en.wikipedia.org/wiki/New_York_City" target="_blank"><span style="color: blue">Read more on Wikipedia</span></a>
+  <br>
+  <br>
+  <br>
+<button class="button">Visit New York City</button>
+<script>
+    document.querySelector('.button').addEventListener('click', function() {
+      let name = prompt('What is your name?');
+      if (name.length) {
+        alert('Thanks ' + name + ' for your interest in visiting New York City. We will be in touch!')
+      } else {
+        alert('When you are ready to visit, New York City will be there 💗!')
+      }
+    });
+    
+  </script></body>
+</html>

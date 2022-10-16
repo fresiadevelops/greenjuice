@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Guessing Game</title>
+    <!-- HTML is above-->
+    <style>
+      body {
+        background-image: url("images/pastel2.jpg");
+        font-size: 15px;
+      }
+      button {
+        position: relative;
+        padding: 20px;
+        cursor: pointer;
+        background: #800080;
+        font-size: 20px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Color Guessing Game</h1>
+    <button onclick="runGame()">Start Game</button>
+    <script type="text/javascript">
+      const COLORS_ARRAY = [
+        "green",
+        "cyan",
+        "gold",
+        "gray",
+        "blue",
+        "magenta",
+        "red",
+        "orange",
+        "yellow",
+        "white",
+      ];
+
+      let numTries = 0;
+
+      function runGame() {
+        let guess = "";
+        let correct = false;
+        let min = 0;
+        let max = COLORS_ARRAY.length;
+        const targetIndex = Math.floor(Math.random() * (max - min) + min);
+        const target = COLORS_ARRAY[targetIndex];
+
+        console.log(targetIndex);
+        console.log(target);
+
+        do {
+          guess = prompt(
+            "I am thinking of one of these colors:\n\n" +
+              COLORS_ARRAY.sort().join(", ") +
+              "\n\nWhat color am I thinking of?\n"
+          ).toLowerCase();
+
+          if (guess === null) {
+            //alert: "The game has been aborted");
+            return;
+          }
+          correct = checkGuess(guess, target);
+          numTries++;
+        } while (!correct);
+        alert(
+          "Congratulations! You have guessed the color!\n\n It took you " +
+            numTries +
+            " guesses to finish the game! \n\n\ Hit OK to see the color in the background. "
+        );
+
+        //change background guessed color
+        document.body.style.background = guess;
+        setTimeout(() => {
+          location.reload();
+        }, 5000);
+      }
+
+      function checkGuess(guess, target) {
+        let correct = false;
+        if (!COLORS_ARRAY.includes(guess)) {
+          alert(
+            "Sorry, I don't recognize your color. \n\n This is your " +
+              numTries +
+              " try. \n\n Please try again."
+          );
+        } else if (guess > target) {
+          alert(
+            "Sorry, your guess is not correct!\n\nHint: Your color is alphabetically higher than mine.\n\n Please try again."
+          );
+        } else if (guess < target) {
+          alert(
+            "Sorry, your guess is not correct!\n\nHint: Your color is alphabetically lower than mine.\n\nPlease try again."
+          );
+        } else {
+          correct = true;
+        }
+        return correct;
+      }
+    </script>
+  </body>
+</html>
